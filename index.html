@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Model Interactive</title>
+  <style>
+    html, body { margin:0; height:100%; overflow:hidden; background:#0b0f1a; }
+    #ui{
+  position:fixed; left:12px; top:12px; z-index:10;
+  color:#eaf2ff; font:14px system-ui;
+  padding:12px;
+  background: linear-gradient(180deg, rgba(10,20,40,.72), rgba(0,0,0,.35));
+  border: 1px solid rgba(120,190,255,.25);
+  border-radius: 14px;
+  width: 300px;
+  box-shadow: 0 0 24px rgba(60,170,255,.18);
+  backdrop-filter: blur(8px);
+}
+#ui b{ color:#9fe4ff; }
+    
+    #buttons{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:10px; }
+    button{
+      cursor:pointer; border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08); color:#fff; border-radius:10px;
+      padding:8px 10px; text-align:left;
+    }
+    button:hover{ background:rgba(255,255,255,.12); }
+    #status{ opacity:.9; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <div><b>Modelo 3D interactivo</b></div>
+    <div id="status">Cargando…</div>
+    <div id="buttons"></div>
+    <div style="margin-top:10px;opacity:.8">Mouse: orbitar/zoom</div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
