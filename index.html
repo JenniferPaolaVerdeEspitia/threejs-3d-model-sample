@@ -27,6 +27,15 @@
     }
     button:hover{ background:rgba(255,255,255,.12); }
     #status{ opacity:.9; }
+    canvas{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;      /* arriba del fondo (0) */
+  display: block;
+}
+#ui{ z-index: 10; } /* ya lo tienes, pero lo reafirmamos */
   </style>
 </head>
 <body>
